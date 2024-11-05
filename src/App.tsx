@@ -5,6 +5,7 @@ import type { FunctionComponent } from "./common/types";
 // import { TanStackRouterDevelopmentTools } from "./components/utils/development-tools/TanStackRouterDevelopmentTools";
 import { CartProvider } from './hooks/CartProvider'; // Adjust the path as necessary
 import { AuthProvider } from "./hooks/AuthProvider";
+import Header from "/home/vare/project/microservices_1/ecommerce_1/Barnes-Clone-Frontend/src/components/layout/Header.tsx";
 
 const queryClient = new QueryClient();
 
@@ -14,15 +15,16 @@ const App = ({ router }: AppProps): FunctionComponent => {
 	return (
 		<QueryClientProvider client={queryClient}>
 			<AuthProvider>
-			<CartProvider>
-			<RouterProvider router={router} />
+				<CartProvider>
+					<Header/>
+					<RouterProvider router={router} />
 			{/* <TanStackRouterDevelopmentTools
 				router={router}
 				initialIsOpen={false}
 				position="bottom-right"
 			/>
 			<ReactQueryDevtools initialIsOpen={false} /> */}
-			</CartProvider>
+				</CartProvider>
 			</AuthProvider>
 		</QueryClientProvider>
 	);
