@@ -1,3 +1,4 @@
+import '/home/vare/project/microservices_1/ecommerce_1/Barnes-Clone-Frontend/src/styles/MovingBar.css'
 const MovingBar = () => {
     return (
       <div className="relative w-full h-9 overflow-hidden bg-black">

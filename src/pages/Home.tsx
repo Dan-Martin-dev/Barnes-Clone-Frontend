@@ -1,9 +1,9 @@
-import { useTranslation } from "react-i18next";
+/* import { useTranslation } from "react-i18next"; */
 import type { FunctionComponent } from "../common/types";
 import Header from "../components/layout/Header";
 
 export const Home = (): FunctionComponent => {
-	const { t, i18n } = useTranslation();
+/* 	const { t, i18n } = useTranslation();
 
 	const onTranslateButtonClick = async (): Promise<void> => {
 		if (i18n.resolvedLanguage === "en") {
@@ -11,7 +11,7 @@ export const Home = (): FunctionComponent => {
 		} else {
 			await i18n.changeLanguage("en");
 		}
-	};
+	}; */
 
 	return (
 		<div className="">
