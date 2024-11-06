@@ -1,6 +1,4 @@
 // Import necessary libraries and styles
-import React from "react";
-import axios from "axios";
 import { Toaster } from "sonner";
 import useLogin from "/home/vare/project/microservices_1/ecommerce_1/Barnes-Clone-Frontend/src/hooks/useLogin.tsx";
 

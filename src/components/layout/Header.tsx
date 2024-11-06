@@ -1,13 +1,13 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useState } from "react";
 import { useCart } from "../../hooks/CartProvider"; // Adjust path based on actual structure
 import { useAuth } from "../../hooks/AuthProvider"; // Adjust path based on actual structure
 import MovingBar from "../ui/MovingBar";
 import SmartCart from "../ui/SmartCart";
-import logo from "/home/vare/project/microservices_1/ecommerce_1/Barnes-Clone-Frontend/public /logo.webp"; // Adjust this path according to your structure
+import logo from "/home/vare/project/microservices_1/ecommerce_1/Barnes-Clone-Frontend/public/logo.webp"; // Adjust this path according to your structure
 
-const Header = () => {
-	const { isCarritoOpen, toggleCarrito, isMounted } = useCart();
-	const [isProductosHovered, setIsProductosHovered] = useState(false);
+const Header: React.FC = () => {
+	const { toggleCarrito } = useCart();
+	const [ isProductosHovered, setIsProductosHovered] = useState(false);
 	const { isAuthenticated, login, logout } = useAuth();
 
 	return (

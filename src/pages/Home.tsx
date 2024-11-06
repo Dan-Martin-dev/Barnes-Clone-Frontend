@@ -1,5 +1,7 @@
 /* import { useTranslation } from "react-i18next"; */
 import type { FunctionComponent } from "../common/types";
+import HomeMain from "../components/layout/HomeMain";
+import HomeSecond from "../components/layout/HomeSecond";
 
 export const Home = (): FunctionComponent => {
 /* 	const { t, i18n } = useTranslation();
@@ -14,7 +16,8 @@ export const Home = (): FunctionComponent => {
 
 	return (
 		<div className="">
-			
+			<HomeMain/>
+			<HomeSecond/>
 		</div>
 	);
 };
