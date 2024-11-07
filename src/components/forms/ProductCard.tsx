@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import type { Product } from '../../types/types.tsx'; // Adjust the path to your types file
-import { Link } from '@tanstack/react-router';
 
 const ProductCard: React.FC<Product> = ({ id, title, price, beforePrice, share, images }) => {
   const [hover, setHover] = useState(false);

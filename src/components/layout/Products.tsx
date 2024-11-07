@@ -10,15 +10,18 @@ const Products: React.FC = () => {
 
 	return (
 		<>
-			{products.map((product: Product, index: number ) => (
-				<Link
-					key={product.id} // Ensure key is unique and assigned to Link
-					className={`${index === 0 ? "" : "hidden md:block"}`}
-					to={`/products/${product.id}`}
-				>
-					<ProductCard {...product} />
-				</Link>
-			))}
+			{products.map((product: Product, index: number ) => {
+				console.log("Product ID:", product.id); 
+				return (
+					<Link
+						key={product.id} // Ensure key is unique and assigned to Link
+						className={`${index === 0 ? "" : "hidden md:block"}`}
+						to={`/products/${product.id}`}
+					>
+						<ProductCard {...product} />
+					</Link>
+				)
+			})}
 		</>
 	);
 };

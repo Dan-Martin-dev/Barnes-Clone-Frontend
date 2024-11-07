@@ -1,21 +1,38 @@
-import { useParams } from "@tanstack/react-router";
-import useFetchProduct from "../../hooks/useFetchProduct";
+// components/forms/ProductDetail.tsx
+import { useParams } from '@tanstack/react-router'
+import useFetchProduct from '../../hooks/useFetchProduct'
 
-const ProductDetail: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
-  const { product, loading } = useFetchProduct(id);
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type, @typescript-eslint/explicit-module-boundary-types
+const ProductDetail = () => {
+  // Access the dynamic `id` parameter from the route
+  const { id } = useParams({ strict: false })
+  console.log("ProductDetail - Retrieved ID:", id);
 
-  if (loading) return <p>Loading...</p>;
-  if (!product) return <p>Product not found</p>;
+  // Use the custom hook to fetch product data
+  const { product, loading } = useFetchProduct(id)
+
+  if (!id) {
+    console.error('Product ID is missing!');
+  }
+   if (id) {
+    console.error('Product ID is good!!');
+  }
+  if (loading) {
+    return <div>Loading...</div>
+  }
+
+  if (!product) {
+    return <div>Product not found</div>
+  }
 
   return (
     <div>
-      <h2>{product.title}</h2>
-      <p>{product.description}</p>
-      <p>Price: ${product.price}</p>
-      <img alt={product.title} src={product.image} />
+      <h1>Product Details</h1>
+      <p>ID: {product.id}</p>
+      <p>Name: {product.title}</p>
+      {/* Render other product details here */}
     </div>
-  );
-};
+  )
+}
 
-export default ProductDetail;
+export default ProductDetail

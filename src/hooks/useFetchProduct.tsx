@@ -13,7 +13,7 @@ const useFetchProduct = (
 ): { product: Product | null; loading: boolean } => {
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
-  const apiUrl = import.meta.env.VITE_API_BASE_URL;
+  const apiUrl = import.meta.env["VITE_API_BASE_URL"];
 
   useEffect(() => {
     if (!id) return;
@@ -23,7 +23,7 @@ const useFetchProduct = (
         if (!response.ok) {
           throw new Error("Product not found");
         }
-        const data = await response.json();
+        const data = await response.json() as Array<Product
         setProduct(data);
       } catch (error) {
         console.error(error);

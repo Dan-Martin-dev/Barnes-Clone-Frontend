@@ -22,7 +22,7 @@ const useFetchProducts = (): { products: Array<Product>; loading: boolean } => {
       }
     };
 
-    fetchProducts();
+    void fetchProducts();
   }, [apiUrl]);
 
   return { products, loading };
