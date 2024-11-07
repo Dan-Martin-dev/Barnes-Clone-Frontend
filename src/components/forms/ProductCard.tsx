@@ -39,12 +39,11 @@ const ProductCard: React.FC<Product> = ({ id, title, price, beforePrice, share, 
         <p className="text-xs text-gray-500">{share}</p>
 
         {/* Link to product detail page */}
-        <Link
+        <div
           className="mt-2 w-full text-gray-500 text-sm font-normal py-2 text-left underline"
-          to={`/product/${id}`}
         >
           Comprar
-        </Link>
+        </div>
       </div>
     </div>
   );

@@ -29,3 +29,7 @@ export interface Category {
     category: Category; // Nested category object
     addedBy: User; // Nested addedBy object
   }
+
+  export interface ProductCardProps extends Product {
+    className?: string;
+  }
