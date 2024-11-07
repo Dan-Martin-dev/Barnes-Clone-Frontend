@@ -23,8 +23,8 @@ const useFetchProduct = (
         if (!response.ok) {
           throw new Error("Product not found");
         }
-        const data = await response.json() as Array<Product
-        setProduct(data);
+        const data = await response.json()
+        setProduct(data as Product);  // Assuming `data` is of type `Product`
       } catch (error) {
         console.error(error);
       } finally {

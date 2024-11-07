@@ -14,7 +14,7 @@ const useFetchProducts = (): { products: Array<Product>; loading: boolean } => {
 
         const data = await response.json();
         console.log("Fetched data:", data); // Log data to check structure
-        setProducts(data); // If data.products, then use `setProducts(data.products)`
+        setProducts(data as Array<Product>);  // Assuming `data` is of type `Product`
       } catch (error) {
         console.error("Error fetching products:", error);
       } finally {
