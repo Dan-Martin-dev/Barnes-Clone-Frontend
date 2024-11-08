@@ -6,7 +6,7 @@ const ProductCard: React.FC<Product> = ({ id, title, price, beforePrice, share, 
 
   return (
     <div className="max-w-full mt-4 min-h-max">
-      <div 
+      <div  
         className="relative overflow-hidden bg-white shadow-lg"
         onMouseEnter={() => { setHover(true)} }
         onMouseLeave={() => { setHover(false)} }
@@ -22,7 +22,7 @@ const ProductCard: React.FC<Product> = ({ id, title, price, beforePrice, share, 
           <img
             alt={title}
             className={`transform transition-transform duration-500 ease-in-out ${hover ? 'scale-110' : 'scale-100'} w-full h-full object-cover`}
-            src={hover ? images[0] : images[1] || images[0]} // Displays alternate image on hover if available
+            src={images[0]}
           />
         </div>
       </div>

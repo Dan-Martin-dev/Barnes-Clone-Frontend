@@ -1,22 +1,17 @@
 import { useState, useEffect } from "react";
-
-interface Product {
-  id: number;
-  title: string;
-  description: string;
-  price: number;
-  image: string;
-}
+import type { Product } from "../types/types";
 
 const useFetchProduct = (
-  id: any
+  id: string | undefined 
 ): { product: Product | null; loading: boolean } => {
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const apiUrl = import.meta.env["VITE_API_BASE_URL"];
 
   useEffect(() => {
     if (!id) return;
+    // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
     const fetchProduct = async () => {
       try {
         const response = await fetch(`${apiUrl}/products/${id}`);
@@ -31,7 +26,7 @@ const useFetchProduct = (
         setLoading(false);
       }
     };
-    fetchProduct();
+    void fetchProduct();
   }, [id, apiUrl]);
 
   return { product, loading };
