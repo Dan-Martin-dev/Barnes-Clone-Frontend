@@ -10,7 +10,7 @@ const Products: React.FC = () => {
 
 	return (
 		<>
-			{products.map((product: Product, index: number ) => {
+			{products.slice(0, 6).map((product: Product, index: number) => {
 				console.log("Product ID:", product.id); 
 				return (
 					<Link

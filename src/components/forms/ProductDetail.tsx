@@ -8,9 +8,7 @@ const ProductDetail = () => {
   const { id } = useParams({ strict: false })
   console.log("ProductDetail - Retrieved ID:", id);
 
-  // Use the custom hook to fetch product data
   const { product, loading } = useFetchProduct(id)
-
   if (!id) {
     console.error('Product ID is missing!');
   }
@@ -20,7 +18,6 @@ const ProductDetail = () => {
   if (loading) {
     return <div>Loading...</div>
   }
-
   if (!product) {
     return <div>Product not found</div>
   }

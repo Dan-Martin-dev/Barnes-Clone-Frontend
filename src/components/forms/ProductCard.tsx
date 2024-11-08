@@ -10,6 +10,7 @@ const ProductCard: React.FC<Product> = ({ id, title, price, beforePrice, share, 
         className="relative overflow-hidden bg-white shadow-lg"
         onMouseEnter={() => { setHover(true)} }
         onMouseLeave={() => { setHover(false)} }
+
       >
         {/* Red Tag */}
         <div className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-red-600 text-white text-xs font-bold px-2 py-1 z-10">
